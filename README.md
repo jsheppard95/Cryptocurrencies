@@ -37,3 +37,17 @@ using `sklearn.cluster.KMeans` and categorize our reduced data contained in
 currency, its principal components, and the predicted class.
 
 ### Visualization
+Finally, we visualize our model's clusters using `plotly.express.scatter_3d`.
+Here we see four distinct classes as expected from the Elbow Curve, but
+checking counts with `clustered_df["Class"].value_counts()`, we find that
+class 2 only has one member. Our 3D scatter plot reveals this outlier is
+BitTorrent (BTT) with `PC1 = 34.11`. Inspecting in `clustered_df`, we see that
+BTT has `TotalCoinsMined = 9.9e+11`. We can the sort `clustered_df` by this
+column using the interactive table generated from `hvplot.pandas.table`. We
+thus find that BTT has the largest number of coins mined and is roughly nine
+times that of the second largest. It is therefore clear that `clustered_df`
+has four distinct groups, but the outlier BTT is less representative of the
+data set as a whole. This is further confirmed by creating a 2D scatter plot
+of the tradable currencies `TotalCoinSupply` and `TotalCoinsMined` scaled using
+`sklearn.preprocessing.MinMaxScaler` and colored by class, where these scaled
+features for BTT are both close to one.
