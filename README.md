@@ -52,16 +52,16 @@ by the K-means predicted class for tradable currencies, where we see these
 scaled features for BTT are both close to one.
 
 ## Usage
-All code is contained in the Jupyter Notebook file single
+All code is contained in the single Jupyter Notebook file
 [`crypto_clustering.ipynb`](crypto_clustering.ipynb). Replication of this
 analysis is therefore accomplished by first cloning this repository and
-installing dependencies into an isolated `conda` environment using
+installing dependencies into an isolated `conda` environment using:
 ```
 conda env create -f environment.yml
 ```
 One can then open the Jupyter Notebook file and run all cells. Alternatively,
 the user can work sequentially through the notebook and modify the filtering
-criteria, number of components for PCA, and number of cluster for the K-means
-cluster model. The visualizations are then found under the section
-"Visualizing Cryptocurrency Results", as shown for the
-[K-Means Model with Three Clusters](Images/Kmeans_3d_clusters.png).
+criteria, number of components for PCA, and number of clusters for the K-means
+model and visualize the effects in the scatter plots. These visualizations are
+found under the section "Visualizing Cryptocurrency Results", as shown for the
+[K-Means Model with Four Clusters](Images/Kmeans_3d_clusters.png).
